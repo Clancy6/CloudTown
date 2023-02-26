@@ -104,7 +104,33 @@
   </div>
 </div>
 
-<script  src="js/script.js"></script>
+    <script  src="js/script.js"></script>
+    <script>
+        // 中考倒计时
+        setInterval(function () {
+            // 现在的日期
+            var d = new Date();
+            // 目标日期
+            var dd = new Date(2023, 6, 14);
+            // 日期对象-日期对象=得到时间戳差
+            var diff = dd - d;
+            // 将时间戳差变为时间对象 此时的时间对象是相对于1970年1月1日的
+            // 计算和1970年1月1日8时0分相差了多久
+            var time = new Date(diff);
+            var p=new Date(0);
+            var year = time.getFullYear() - 1970;
+            var month = time.getMonth() - 1 + 1; //getMonth()返回的月份是从0开始计算，所以加了个1
+            var date = time.getDate() - 1;
+            var hours = time.getHours() - 8; //减去8个小时的时区
+            var minutes = time.getMinutes();
+            var seconds = time.getSeconds();
+            var info = document.getElementById('days');
+            // 剩下的总天数
+            days_left = parseInt(diff / (1000 * 24 * 60 * 60));
+            // info.innerHTML = "还剩下" +year+"年"+ month + "个月" + date + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒" + "<br>还剩下" + days_left + "天";
+            info.innerHTML = days_left;
+        }, 1000);
+    </script>
 
 </body>
 </html>
