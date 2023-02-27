@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>时间不多了</title><style>.D1{margin-top: 100px;border-radius: 20px 70px;background: bisque;width: 900px;padding-top: 50px;padding-bottom: 50px;}.T1{color: #f00;font-size: 50px;}.T2{color: dodgerblue;}</style>
+</head>
+<body onload="time(),now()" >
+<div align="center">
+<div align="center" class="D1"><h1>嘿！时间在流失</h1><h2>现在是：</h2><h2 id="now" class="T2"></h2><h2>距离2023年6月14日还剩：</h2><h1 id="time" class="T1"></h1>
+</div>
+</div>
+<script>let future= new Date(2023,6,14);function  time(){let N =new Date();let d=(future.getTime()-N.getTime())/86400000;let h=(future.getTime()-N.getTime())%86400000/3600000;let m=(future.getTime()-N.getTime())%3600000/60000;let s=(future.getTime()-N.getTime())%60000/1000;document.getElementById("time").innerHTML=d.toFixed(0)+"天"+h.toFixed(0)+"小时"+m.toFixed(0)+"分钟"+s.toFixed(0)+"秒"}function now(){let N =new Date();document.getElementById("now").innerHTML=N.getFullYear()+"年"+(N.getMonth()+1)+"月"+N.getDate()+"日"+N.getHours()+"小时"+N.getMinutes()+"分钟"+N.getSeconds()+"秒";console.log("aaa");}setInterval(now,1000);setInterval(time,1000);
+</script>
+</body>
+</html>
