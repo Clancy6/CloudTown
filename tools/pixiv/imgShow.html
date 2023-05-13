@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <title>pixiv图片在线查询</title>
+        <script>
+            function checkInput() {
+                pid = document.getElementById("inputer_pid").value;
+                p = document.getElementById("inputer_p").value;
+                type_pic = document.getElementsByName("tp");
+                way = document.getElementsByName("way");
+                for(var i=0; i<3; i++) {
+                    if(type_pic[i].checked) {
+                        type = type_pic[i].value;
+                    }
+                }
+                image_e = document.getElementById('image');
+                if(way == "re") {
+                    if(p != "") {
+                        p = "-"+Number(p)+1;
+                    }
+                    image_e.src = "https://pixiv.re/" + pid + p + "." + type;
+                } else if(way == "api"){
+                    image_e.src = "https://api.102456.xyz/pixiv/pid.php?pid=" + pid + "&p=" + p;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <p>在框内输入作品ID（如82775556）再按“查询”按钮即可查看对应作品</p>
+        <p>对于一个ID有多张图片的，请在第二个输入框中输入“【页码】-1”（0表示第一页，1表示第二页……）</p>
+        <p>（图片为动态产生，准确档案类型会以Content-Type header发送）</p>
+        <hr/>
+        <input type="text" class="i" size="20" autofocus id="inputer_pid" placeholder="输入pid" required="required"/><br />
+        <input type="text" class="i" size="20" autofocus id="inputer_p" placeholder="输入页码(可选)，0是第一页" required="required"/><br />
+        <button type="button" class="btn" onclick="checkInput()">查询</button>
+        <br/>
+        <p>线路：</p>
+        <input type="radio" name="way" id="type_pic" value="re" checked="checked"/>Pixiv.re (Cloudflare Workers)<br />
+        <input type="radio" name="way" id="type_pic" value="api"/>CloudTown (CT云代理-HongKong)
+        <p>格式：</p>
+        <input type="radio" name="tp" id="type_pic" value="png" checked="checked"/>png
+        <input type="radio" name="tp" id="type_pic" value="jpg"/>jpg
+        <input type="radio" name="tp" id="type_pic" value="gif"/>gif
+        <hr/>
+        <img id="image" src="https://pixiv.re" width="500" alt="图片不存在或无法查看图片（请确定pid存在且图片格式正确）"/>
+        <noscript>请开启JavaScript</noscript>
+    </body>
+</html>
