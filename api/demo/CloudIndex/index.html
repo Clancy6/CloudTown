@@ -1,0 +1,111 @@
+<!-- 
+    变量文档 - README
+    
+    _Title_           标题（“XXX的主页”“XXX工作室”“XXX's Page”……
+    _keywords_     关键字（用于搜索引擎收录
+    _description_    描述（用于搜索引擎收录、页面预加载信息展示
+    _qq_            QQ号（用于获取头像
+    _Name_         昵称
+    _Text1_         文本1（格言、名句、签名类
+    _Text2_         文本2（留言、介绍类
+    _Contact1_      联系方式1（标题，如：“我的【QQ】/【邮箱】/【微信】/【微博】”
+    _Contact2_      联系方式2，同上
+    _Contact1Link_  联系方式1对应的链接
+    _Contact2Link_  联系方式2对应的链接
+    _Timeline_       时间轴名称，可以是“发展历程”“XX编年史”“时间轴”“TimeLine”等等
+    _Demo_         时间轴自定义部分，格式如下：
+                     ========一个时间点======
+                     <li>
+				        <h3>
+							【时间】
+					    </h3>
+						<p>
+							【事件】
+						</p>
+					 </li>
+                     =======================
+                     （时间点可多个罗列）
+    _Link1_         版权信息中显示的链接，建议使用此页面
+    _Copy_         版权信息中显示的名称，建议与 _Name_ 相同
+    
+    
+    
+    
+    话说写这个文档真费劲啊。。。
+ -->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>_Title_</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="keywords" content="_keywords_">
+		<meta name="description" content="_description_">
+		<script src="https://hello.zpage.eu/demo/CloudIndex/js/jquery.min_1.js"></script>
+		<link rel="stylesheet" href="https://hello.zpage.eu/demo/CloudIndex/css/main.css">
+		<noscript><link rel="stylesheet" href="https://hello.zpage.eu/demo/CloudIndex/css/noscript.css"></noscript>
+	</head>
+	<body class="is-preload">
+	<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<img src="http://q1.qlogo.cn/g?b=qq&nk=_qq_&s=640" class="logo" alt="_Name_" title="_Name_">
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>_Name_</h1>
+								<p>_Text1_</p><br>
+								<p>_Text2_</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#timeline">_Timeline_</a></li>
+								<li><a href="_Contact1Link_" target="_blank">_Contact1_</a></li>
+								<li><a href="_Contact2Link_" target="_blank">_Contact2_</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+						<!-- english -->
+							<article id="timeline">
+								<ul>
+									<center>
+									<li><h2>_Timeline_</h2></li>
+									_Demo_
+									<li>
+										<h3>
+											未来可期
+										</h3>
+										<p><a href="#">返回主页</a></p>
+									</li>
+									</center>
+								</ul>
+							</article>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+	                  <p class="copyright">Copyright © 2023 <a href="_Link1_" target="_blank">_Copy_</a> 版权所有</p>
+					</footer>
+
+			</div>
+
+		<!-- BJ -->
+			<div id="bg">
+			</div>
+
+		<!-- Scripts -->
+			<script src="https://hello.zpage.eu/demo/CloudIndex/js/jquery.min.js"></script>
+			<script src="https://hello.zpage.eu/demo/CloudIndex/js/browser.min.js"></script>
+			<script src="https://hello.zpage.eu/demo/CloudIndex/js/breakpoints.min.js"></script>
+			<script src="https://hello.zpage.eu/demo/CloudIndex/js/util.js"></script>
+			<script src="https://hello.zpage.eu/demo/CloudIndex/js/main.js"></script>
+			<script type="text/javascript">document.oncontextmenu=function(t){window.event&&(t=window.event);try{var e=t.srcElement;return"INPUT"==e.tagName&&"text"==e.type.toLowerCase()||"TEXTAREA"==e.tagName?!0:!1}catch(n){return!1}},document.onpaste=function(t){window.event&&(t=window.event);try{var e=t.srcElement;return"INPUT"==e.tagName&&"text"==e.type.toLowerCase()||"TEXTAREA"==e.tagName?!0:!1}catch(n){return!1}},document.oncopy=function(t){window.event&&(t=window.event);try{var e=t.srcElement;return"INPUT"==e.tagName&&"text"==e.type.toLowerCase()||"TEXTAREA"==e.tagName?!0:!1}catch(n){return!1}},document.oncut=function(t){window.event&&(t=window.event);try{var e=t.srcElement;return"INPUT"==e.tagName&&"text"==e.type.toLowerCase()||"TEXTAREA"==e.tagName?!0:!1}catch(n){return!1}},document.onselectstart=function(t){window.event&&(t=window.event);try{var e=t.srcElement;return"INPUT"==e.tagName&&"text"==e.type.toLowerCase()||"TEXTAREA"==e.tagName?!0:!1}catch(n){return!1}};
+			</script>
+	</body>
+</html>

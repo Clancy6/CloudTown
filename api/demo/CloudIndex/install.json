@@ -1,0 +1,71 @@
+{
+    "DemoName": "云彩主页v1.2",
+    "Pathinfo": {
+        1: {
+            "name": "js"
+        },
+        2: {
+            "name": "images"
+        },
+        3: {
+            "name": "css"
+        }
+    },
+    "Installinfo": {
+        1: {
+            "name": "breakpoints.min.js",
+            "url": "https://hello.zpage.eu/demo/CloudIndex/js/breakpoints.min.js",
+            "path": "js/breakpoints.min.js"
+            },
+        2: {
+            "name": "browser.min.js",
+            "url": "https://hello.zpage.eu/demo/CloudIndex/js/browser.min.js",
+            "path": "js/browser.min.js"
+            },
+        3: {
+            "name": "jquery.min.js",
+            "url": "https://hello.zpage.eu/demo/CloudIndex/js/jquery.min.js",
+            "path": "js/jquery.min.js"
+            },
+        4: {
+            "name": "jquery.min_1.js",
+            "url": "https://hello.zpage.eu/demo/CloudIndex/jquery.min_1.js",
+            "path": "js/jquery.min_1.js"
+            },
+        5: {
+            "name": "main.js",
+            "url": "https://hello.zpage.eu/demo/CloudIndex/js/main.js",
+            "path": "js/main.js"
+            },
+        6: {
+            "name": "util.js",
+            "url": "https://hello.zpage.eu/demo/CloudIndex/js/util.js",
+            "path": "js/util.js"
+            },
+        7: {
+            "name": "bj.png",
+            "url": "https://hello.zpage.eu/demo/CloudIndex/images/bj.png",
+            "path": "images/bj.png"
+            },
+        8: {
+            "name": "css.css",
+            "url": "https://hello.zpage.eu/demo/CloudIndex/css/css.css",
+            "path": "css/css.css"
+            },
+        9: {
+            "name": "fontawesome-all.min.css",
+            "url": "https://hello.zpage.eu/demo/CloudIndex/css/fontawesome-all.min.css",
+            "path": "css/fontawesome-all.min.css"
+            },
+        10: {
+            "name": "main.css",
+            "url": "https://hello.zpage.eu/demo/CloudIndex/css/main.css",
+            "path": "css/main.css"
+            },
+        11: {
+            "name": "noscript.css",
+            "url": "https://hello.zpage.eu/demo/CloudIndex/css/noscript.css",
+            "path": "css/noscript.css"
+            },
+    }
+}
