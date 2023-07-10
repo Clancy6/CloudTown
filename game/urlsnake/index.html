@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>URL Snake!</title>
+<meta name=description content="Play the classic snake game on the browser URL."/>
+<meta name=viewport content="width=device-width, initial-scale=1.0"/>
+<link rel=canonical href="/snake/">
+<link rel="shortcut icon" href=favicon.ico />
+<link rel=stylesheet href=style.css>
+<script data-goatcounter="https://demian.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+  if ('ontouchstart' in document.documentElement) {
+    document.documentElement.classList.add('touch')
+  }
+</script>
+</head>
+<noscript>⚠ Sorry, this game requires JavaScript.</noscript>
+<div id=url-container class=invisible>URL: <span id=url></span></div>
+<input type=checkbox id=help-checkbox class=expandable-checkbox>
+<label for=help-checkbox class=expandable>
+  <div class=expandable-content>
+    <span class="help-toggle expand-toggle">?</span>
+    <span class=no-touch-only>Use the arrow keys or WASD to control the snake on the URL.</span>
+    <span class=touch-only>Use the arrows to control the snake on the URL.</span>
+    <a id=reveal-url href=#>Click here</a> if you can't see the page URL.&nbsp;<span class=collapse-toggle>〈</span>
+  </div>
+</label>
+<input type=checkbox id=max-score-checkbox class=expandable-checkbox>
+<label for=max-score-checkbox id=max-score-container class="expandable invisible">
+  <div class=expandable-content>
+    <span class="high-score-toggle expand-toggle">!</span>
+    Your highest score is <span id=max-score></span> points!
+    <span id=max-score-grid></span><a id=share class=invisible href=#><i class=icon-share></i>Share</a>&nbsp;<span class=collapse-toggle>〈</span>
+    </div>
+  </head>
+</label>
+<div class="controls touch-only">
+  <button id=up>▲&#xFE0E;</button>
+  <button id=left>◀&#xFE0E;</button>
+  <button id=down>▼&#xFE0E;</button>
+  <button id=right>▶&#xFE0E;</button>
+</div>
+<footer>
+  Made with (⠠⠇) by <a href=https://twitter.com/epidemian>@epidemian</a> |
+  <a href=https://github.com/epidemian/snake>Code</a>
+</footer>
+<script src=snake.js></script>
