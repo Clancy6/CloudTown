@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.5.0/jszip.min.js"></script>
+    <script src="FileSaver.js"></script>
+    <title>图像九宫格切分工具</title>
+    <style>
+        #image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .image {
+            width: 33%;
+            height: auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+        #download-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>图像九宫格切分工具</h1>
+    <input type="file" id="image-upload" accept="image/*">
+    <div id="image-container"></div>
+    <div id="download-button"></div>
+
+    <script>
+document.getElementById('image-upload').addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        var image = new Image();
+        image.src = e.target.result;
+        image.onload = function() {
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
+            var width = Math.floor(image.width / 3);
+            var height = Math.floor(image.height / 3);
+            canvas.width = width;
+            canvas.height = height;
+
+            var imageContainer = document.getElementById('image-container');
+            var downloadButton = document.getElementById('download-button');
+            imageContainer.innerHTML = '';
+            for (var i = 0; i < 9; i++) {
+                ctx.clearRect(0, 0, width, height);
+                var x = (i % 3) * width;
+                var y = Math.floor(i / 3) * height;
+                ctx.drawImage(image, x, y, width, height, 0, 0, width, height);
+                var dataURL = canvas.toDataURL('image/png');
+                var img = document.createElement('img');
+                img.src = dataURL;
+                img.classList.add('image');
+                imageContainer.appendChild(img);
+            }
+
+            downloadButton.innerHTML = '';
+            var button = document.createElement('button');
+            button.textContent = '下载所有';
+            button.addEventListener('click', function() {
+                var zip = new JSZip();
+                for (var i = 0; i < 9; i++) {
+                    var x = (i % 3) * width;
+                    var y = Math.floor(i / 3) * height;
+                    ctx.clearRect(0, 0, width, height);
+                    ctx.drawImage(image, x, y, width, height, 0, 0, width, height);
+                    var dataURL = canvas.toDataURL('image/png');
+                    zip.file('image_' + i + '.png', dataURL.split('base64,')[1], { base64: true });
+                }
+                zip.generateAsync({type:"blob"})
+                    .then(function(content) {
+                        saveAs(content, "images.zip");
+                    });
+            });
+            downloadButton.appendChild(button);
+        };
+    };
+    reader.readAsDataURL(file);
+});
+    </script>
+</body>
+</html>
